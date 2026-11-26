@@ -1,0 +1,249 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "NYCConsult Contact Form API -> Lambda -> SES Email"
+
+Parameters:
+  StageName:
+    Type: String
+    Default: prod
+
+  AllowedOrigin:
+    Type: String
+    Default: "https://nycconsult.com"
+    Description: "CORS allowed origin (your website domain)"
+
+  FromEmail:
+    Type: String
+    Default: "contact@nycconsult.com"
+    Description: "SES verified sender email (must be verified in SES)"
+
+  ToEmail:
+    Type: String
+    Default: "oleg.levenkov@gmail.com"
+    Description: "Recipient email for contact form submissions"
+
+Resources:
+  ContactLambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: nycconsult-contact-lambda-role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: nycconsult-contact-lambda-policy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: "*"
+              - Effect: Allow
+                Action:
+                  - ses:SendEmail
+                Resource: "*"
+
+  ContactLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: nycconsult-contact-handler
+      Runtime: python3.12
+      Handler: index.handler
+      Role: !GetAtt ContactLambdaRole.Arn
+      Timeout: 10
+      MemorySize: 256
+      Environment:
+        Variables:
+          FROM_EMAIL: !Ref FromEmail
+          TO_EMAIL: !Ref ToEmail
+          ALLOWED_ORIGIN: !Ref AllowedOrigin
+      Code:
+        ZipFile: |
+          import json
+          import os
+          import re
+          import boto3
+
+          ses = boto3.client("ses")
+
+          def _resp(status, body, origin):
+              return {
+                  "statusCode": status,
+                  "headers": {
+                      "Content-Type": "application/json",
+                      "Access-Control-Allow-Origin": origin,
+                      "Access-Control-Allow-Headers": "Content-Type",
+                      "Access-Control-Allow-Methods": "OPTIONS,POST"
+                  },
+                  "body": json.dumps(body)
+              }
+
+          def _sanitize(val, max_len=4000):
+              if val is None:
+                  return ""
+              s = str(val).replace("<", "").replace(">", "").strip()
+              return s[:max_len]
+
+          def handler(event, context):
+              origin = os.environ.get("ALLOWED_ORIGIN", "*")
+              method = (event.get("httpMethod") or "").upper()
+
+              # CORS preflight
+              if method == "OPTIONS":
+                  return {
+                      "statusCode": 204,
+                      "headers": {
+                          "Access-Control-Allow-Origin": origin,
+                          "Access-Control-Allow-Headers": "Content-Type",
+                          "Access-Control-Allow-Methods": "OPTIONS,POST"
+                      },
+                      "body": ""
+                  }
+
+              if method != "POST":
+                  return _resp(405, {"ok": False, "error": "Method Not Allowed"}, origin)
+
+              try:
+                  payload = json.loads(event.get("body") or "{}")
+              except Exception:
+                  return _resp(400, {"ok": False, "error": "Invalid JSON"}, origin)
+
+              name = _sanitize(payload.get("name"), 120)
+              email = _sanitize(payload.get("email"), 200)
+              company = _sanitize(payload.get("company"), 200)
+              message = _sanitize(payload.get("message"), 4000)
+
+              if not name or not email or not message:
+                  return _resp(400, {"ok": False, "error": "name, email, and message are required"}, origin)
+
+              if len(message) < 10:
+                  return _resp(400, {"ok": False, "error": "Message too short"}, origin)
+
+              urgent = re.search(r"\\burgent\\b", message, re.IGNORECASE) is not None
+              subject = "NYCConsult Contact (URGENT)" if urgent else "NYCConsult Contact Request"
+
+              text_body = f\"\"\"New NYCConsult Contact Request
+
+          Name: {name}
+          Email: {email}
+          Company: {company or "N/A"}
+
+          Message:
+          {message}
+          \"\"\".strip()
+
+              html_body = f\"\"\"
+              <h2>New NYCConsult Contact Request</h2>
+              <p><strong>Name:</strong> {name}</p>
+              <p><strong>Email:</strong> {email}</p>
+              <p><strong>Company:</strong> {company or "N/A"}</p>
+              <hr/>
+              <p><strong>Message:</strong></p>
+              <p>{message.replace("\\n", "<br/>")}</p>
+              \"\"\".strip()
+
+              try:
+                  ses.send_email(
+                      Source=os.environ["FROM_EMAIL"],
+                      Destination={"ToAddresses": [os.environ["TO_EMAIL"]]},
+                      Message={
+                          "Subject": {"Data": subject},
+                          "Body": {
+                              "Text": {"Data": text_body},
+                              "Html": {"Data": html_body},
+                          },
+                      },
+                      ReplyToAddresses=[email],
+                  )
+              except Exception as e:
+                  print("SES send_email failed:", str(e))
+                  return _resp(500, {"ok": False, "error": "Failed to send email"}, origin)
+
+              return _resp(200, {"ok": True}, origin)
+
+  ApiGateway:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: nycconsult-contact-api
+
+  ContactResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ParentId: !GetAtt ApiGateway.RootResourceId
+      PathPart: contact
+
+  PostMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ResourceId: !Ref ContactResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${ContactLambda.Arn}/invocations"
+
+  OptionsMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ResourceId: !Ref ContactResource
+      HttpMethod: OPTIONS
+      AuthorizationType: NONE
+      Integration:
+        Type: MOCK
+        RequestTemplates:
+          application/json: '{ "statusCode": 204 }'
+        IntegrationResponses:
+          - StatusCode: 204
+            ResponseParameters:
+              method.response.header.Access-Control-Allow-Origin: !Sub "'${AllowedOrigin}'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+      MethodResponses:
+        - StatusCode: 204
+          ResponseParameters:
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Methods: true
+
+  Deployment:
+    Type: AWS::ApiGateway::Deployment
+    DependsOn:
+      - PostMethod
+      - OptionsMethod
+    Properties:
+      RestApiId: !Ref ApiGateway
+
+  Stage:
+    Type: AWS::ApiGateway::Stage
+    Properties:
+      RestApiId: !Ref ApiGateway
+      DeploymentId: !Ref Deployment
+      StageName: !Ref StageName
+
+  LambdaPermissionForApi:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref ContactLambda
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGateway}/*/POST/contact"
+
+Outputs:
+  ContactEndpoint:
+    Description: "POST endpoint for the contact form"
+    Value: !Sub "https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/${StageName}/contact"
+
+
+hakinah Moultrie
+Keresha Allen
+Mitsubishi Galante

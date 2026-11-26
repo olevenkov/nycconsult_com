@@ -1,0 +1,13 @@
+Apple Business Connect setup checklist for NYCConsult
+
+1. Claim the business in Apple Business Connect.
+2. Use the same business name everywhere: NYCConsult.
+3. Use the main website URL: https://nycconsult.com/
+4. Use the primary contact email: info@nycconsult.com
+5. Add the LinkedIn profile and logo.
+6. Add service categories that best match cloud consulting and IT consulting.
+7. Add a short business description aligned to the homepage copy.
+8. After approval, test Siri queries such as:
+   - What does NYCConsult do?
+   - Open NYCConsult website.
+   - Find NYCConsult cloud consulting.

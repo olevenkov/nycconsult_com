@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NYCConsult | 20+ Years of Cloud, Platform Engineering & DevSecOps Expertise</title>
+  <meta name="description" content="NYCConsult is a technology consulting company with over 20 years in business, delivering cloud architecture, platform engineering, DevSecOps, Kubernetes, security, compliance, data, and FinOps services through a team of experienced specialists across AWS, Azure, and GCP."/>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="keywords" content="enterprise cloud consulting, platform engineering, DevSecOps consulting, Kubernetes consulting, AWS consulting, Azure consulting, GCP consulting, cloud security, compliance automation, FinOps consulting" />
+  <meta name="author" content="NYCConsult" />
+  <meta name="application-name" content="NYCConsult" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="msvalidate.01" content="09ED8703EE8950D93376FDD69F1416CB" />
+  <link rel="canonical" href="https://nycconsult.com/" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Social preview -->
+  <meta property="og:title" content="NYCConsult | Enterprise Cloud, Platform Engineering & DevSecOps Consulting" />
+  <meta property="og:description" content="Enterprise cloud consulting, platform engineering, DevSecOps, Kubernetes, compliance automation, and FinOps across AWS, Azure, and GCP." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nycconsult.com/" />
+  <meta property="og:site_name" content="NYCConsult" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://nycconsult.com/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="NYCConsult cloud and platform engineering consulting" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NYCConsult | Enterprise Cloud, Platform Engineering & DevSecOps Consulting" />
+  <meta name="twitter:description" content="Enterprise cloud consulting, platform engineering, DevSecOps, Kubernetes, compliance automation, and FinOps across AWS, Azure, and GCP." />
+  <meta name="twitter:image" content="https://nycconsult.com/og-cover.png" />
+  <meta name="twitter:image:alt" content="NYCConsult cloud and platform engineering consulting" />
+
+  <!-- Schema Markup for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://nycconsult.com/#organization",
+        "name": "NYCConsult",
+        "url": "https://nycconsult.com/",
+        "logo": "https://nycconsult.com/logo.png",
+        "image": "https://nycconsult.com/og-cover.png",
+        "description": "Enterprise cloud, platform engineering, DevSecOps, Kubernetes, compliance automation, and FinOps consulting across AWS, Azure, and GCP.",
+        "email": "info@nycconsult.com",
+        "sameAs": ["https://www.linkedin.com/company/2863925/"],
+        "areaServed": "US",
+        "knowsAbout": [
+          "AWS consulting",
+          "Azure consulting",
+          "GCP consulting",
+          "Platform engineering",
+          "DevSecOps",
+          "Kubernetes",
+          "Compliance automation",
+          "Cloud FinOps"
+        ],
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "contactType": "Sales",
+          "email": "info@nycconsult.com",
+          "availableLanguage": ["English"]
+        }]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://nycconsult.com/#website",
+        "url": "https://nycconsult.com/",
+        "name": "NYCConsult",
+        "publisher": {
+          "@id": "https://nycconsult.com/#organization"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://nycconsult.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you work as a team or as individuals?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "NYCConsult is built as a scalable consulting brand. Engagements can be staffed with a lead architect and supporting engineers, depending on scope, timeline, and required skill sets."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you help with compliance documentation (SOC 2, HIPAA, ISO 27001)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We provide readiness assessments, control mappings, templates, evidence workflows, and implementation guidance to make compliance repeatable and less disruptive."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you handle security in CI/CD?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We implement a practical shift-left model: secrets scanning, SAST/DAST, SBOM, IaC policy checks, and secure approvals balanced to keep delivery velocity high."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer fixed-scope engagements?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We can structure work as fixed-scope milestones, such as a landing zone build or platform MVP, or as a retainer for ongoing platform and security improvements."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card:#0f1a33;
+      --text:#eaf0ff;
+      --muted:#b9c6e8;
+      --brand:#3b82f6;
+      --brand2:#8b5cf6;
+      --good:#22c55e;
+      --border: rgba(255,255,255,0.10);
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 70% -10%, rgba(139,92,246,0.35), transparent 60%),
+                  radial-gradient(1000px 600px at 10% 0%, rgba(59,130,246,0.35), transparent 55%),
+                  linear-gradient(180deg, var(--bg) 0%, #070b14 100%);
+      line-height: 1.55;
+    }
+    a{ color: inherit; text-decoration: none; }
+    .container{ max-width: var(--max); margin:0 auto; padding: 0 20px; }
+
+    .topbar{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,11,20,0.65);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+    .logo{
+      width: 38px; height: 38px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
+      box-shadow: 0 10px 30px rgba(59,130,246,0.25);
+      display:grid; place-items:center;
+      font-weight: 800;
+    }
+    .navlinks{
+      display:flex; flex-wrap: wrap; align-items:center; justify-content:flex-end;
+      gap: 10px 14px;
+    }
+    .navlinks a{
+      color: var(--muted);
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 10px;
+      transition: .15s ease;
+    }
+    .navlinks a:hover{ color: var(--text); background: rgba(255,255,255,0.06); }
+    .cta{ display:flex; gap:10px; align-items:center; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      transition: .15s ease;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.10); }
+    .btn.primary{
+      border: none;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
+      box-shadow: 0 14px 45px rgba(59,130,246,0.22);
+    }
+    .btn.primary:hover{ filter: brightness(1.05); }
+
+    header.hero{ padding: 62px 0 34px 0; }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: start;
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-weight: 700;
+      width: fit-content;
+    }
+    .dot{ width: 8px; height: 8px; border-radius: 999px; background: var(--good); }
+    h1{
+      margin: 16px 0 12px;
+      font-size: 44px;
+      line-height: 1.07;
+      letter-spacing: -0.6px;
+    }
+    .lead{ color: var(--muted); font-size: 18px; max-width: 60ch; margin: 0 0 18px; }
+    .heroActions{ display:flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 10px; }
+    .mini{ color: var(--muted); font-size: 13px; margin-top: 8px; }
+    .heroCard{
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .heroCard h3{ margin: 0 0 10px; font-size: 14px; color: var(--muted); letter-spacing: .3px; text-transform: uppercase; }
+    .metric{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .pill{
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(7,11,20,0.35);
+    }
+    .pill b{ display:block; font-size: 18px; margin-bottom: 2px; }
+    .pill span{ color: var(--muted); font-size: 13px; }
+
+    .trust{ padding: 12px 0 26px; }
+    .trustRow{
+      display:flex; flex-wrap: wrap; gap: 10px;
+      align-items:center; justify-content: space-between;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .trustRow .left{ font-weight: 700; color: var(--muted); }
+    .badges{ display:flex; flex-wrap:wrap; gap: 8px; justify-content:flex-end; }
+    .badge{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    section{ padding: 54px 0; }
+    .sectionHead{ display:flex; align-items:flex-end; justify-content:space-between; gap: 18px; margin-bottom: 18px; }
+    .sectionHead h2{ margin: 0; font-size: 28px; letter-spacing: -0.3px; }
+    .sectionHead p{ margin: 0; color: var(--muted); max-width: 66ch; }
+
+    .grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+    }
+    .card h3{ margin: 0 0 8px; font-size: 16px; }
+    .card p{ margin: 0; color: var(--muted); font-size: 14px; }
+    .card ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+    .card li{ margin: 6px 0; }
+
+    .steps{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .step{
+      display:flex; gap: 12px;
+      align-items:flex-start;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .step .num{
+      width: 34px; height: 34px;
+      border-radius: 12px;
+      display:grid; place-items:center;
+      font-weight: 800;
+      background: rgba(59,130,246,0.16);
+      border: 1px solid rgba(59,130,246,0.35);
+    }
+    .step h4{ margin: 0 0 6px; font-size: 15px; }
+    .step p{ margin: 0; color: var(--muted); font-size: 14px; }
+
+    .cases{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .tagRow{ display:flex; flex-wrap:wrap; gap: 8px; margin-top: 12px; }
+    .tag{
+      font-size: 12px; font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(7,11,20,0.25);
+    }
+    .result{
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(34,197,94,0.25);
+      background: rgba(34,197,94,0.06);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .quotes{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .quote{ position: relative; padding-top: 16px; }
+    .quote:before{
+      content: "“";
+      position: absolute;
+      top: -10px; left: 14px;
+      font-size: 64px;
+      opacity: 0.25;
+      line-height: 1;
+    }
+    .quote .stars{ letter-spacing: 1px; color: #fbbf24; }
+    .quote .who{ margin-top: 10px; font-weight: 800; }
+    .quote .who span{ display:block; font-weight: 600; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+    details{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.05);
+    }
+    details + details{ margin-top: 10px; }
+    summary{ cursor: pointer; font-weight: 800; list-style: none; }
+    summary::-webkit-details-marker{ display:none; }
+    details p{ margin: 10px 0 0; color: var(--muted); }
+
+    .contact{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+    .form{ display:grid; gap: 10px; }
+    input, textarea{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(7,11,20,0.35);
+      color: var(--text);
+      outline: none;
+    }
+    textarea{ min-height: 130px; resize: vertical; }
+    input::placeholder, textarea::placeholder{ color: rgba(185,198,232,0.7); }
+    .fineprint{ color: var(--muted); font-size: 12px; margin-top: 8px; }
+
+    .notice{
+      display:none;
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .notice.ok{ border-color: rgba(34,197,94,0.30); background: rgba(34,197,94,0.06); }
+    .notice.err{ border-color: rgba(239,68,68,0.30); background: rgba(239,68,68,0.06); }
+
+    footer{ padding: 28px 0 44px; border-top: 1px solid var(--border); color: var(--muted); }
+    .footerRow{ display:flex; flex-wrap:wrap; gap: 12px; align-items:center; justify-content:space-between; }
+    .footerRow a{ text-decoration: underline; text-decoration-color: rgba(185,198,232,0.35); }
+
+    @media (max-width: 980px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr 1fr; }
+      .quotes{ grid-template-columns: 1fr 1fr; }
+      .cases{ grid-template-columns: 1fr; }
+      .contact{ grid-template-columns: 1fr; }
+    }
+
+    .menuToggle{
+      display:none;
+      width:44px; height:44px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-size:20px;
+      align-items:center; justify-content:center;
+      cursor:pointer;
+    }
+    .menuPanel{ display:none; padding: 0 0 14px; }
+    .menuPanel.open{ display:block; }
+    .mobileNav{ display:grid; gap:10px; padding-top:8px; }
+    .mobileNav a{
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-weight:700;
+    }
+
+    @media (max-width: 980px){
+      .cta{ flex-wrap: wrap; justify-content:flex-end; }
+      .heroActions .btn{ flex: 1 1 220px; }
+      .metric{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 620px){
+      .container{ padding: 0 16px; }
+      .nav{ padding: 12px 0; }
+      .brand span:last-child{ font-size: 15px; }
+      .logo{ width: 34px; height: 34px; border-radius: 10px; }
+      h1{ font-size: 32px; line-height: 1.08; }
+      .lead{ font-size: 16px; }
+      header.hero{ padding: 34px 0 20px 0; }
+      section{ padding: 38px 0; }
+      .sectionHead{ margin-bottom: 14px; }
+      .sectionHead h2{ font-size: 24px; }
+      .grid, .quotes, .steps, .cases, .contact{ grid-template-columns: 1fr; }
+      .navlinks, .cta .btn:not(.primary){ display:none; }
+      .menuToggle{ display:inline-flex; }
+      .cta{ gap:8px; }
+      .btn{ padding: 11px 13px; }
+      .heroActions{ display:grid; grid-template-columns: 1fr; }
+      .heroActions .btn{ width:100%; }
+      .trustRow{ padding: 12px; }
+      .badges{ justify-content:flex-start; }
+      .metric{ grid-template-columns: 1fr; }
+      input, textarea, button{ font-size:16px; }
+      .footerRow{ align-items:flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#services" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.padding='10px 12px';this.style.borderRadius='12px';this.style.background='#111827';this.style.color='#fff';this.style.zIndex='999';">Skip to content</a>
+  <div class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="NYCConsult home">
+          <span class="logo">NY</span>
+          <span>NYCConsult</span>
+        </a>
+
+        <div class="navlinks" aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#industries">Industries</a>
+          <a href="#approach">Approach</a>
+          <a href="#case-studies">Case Studies</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="#case-studies">See work</a>
+          <a class="btn primary" href="#contact">Book a strategy call</a>
+          <button class="menuToggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+        </div>
+      </div>
+      <div class="menuPanel" id="mobileMenu">
+        <nav class="mobileNav" aria-label="Mobile navigation">
+          <a href="#services">Services</a>
+          <a href="#industries">Industries</a>
+          <a href="#approach">Approach</a>
+          <a href="#case-studies">Case Studies</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="https://calendly.com/oleg-levenkov" target="_blank" rel="noreferrer">Book via Calendly</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <header id="top" class="hero">
+    <div class="container">
+      <div class="heroGrid">
+        <div>
+          <div class="kicker"><span class="dot"></span> Enterprise cloud & platform consulting — built to scale</div>
+          <h1>Over 20 years helping organizations build secure cloud platforms, modern delivery pipelines, and resilient enterprise infrastructure.</h1>
+          <p class="lead">
+            NYCConsult is an established technology consulting company with <strong>20+ years in business</strong>, backed by a team of experienced specialists across <strong>AWS</strong>, <strong>Azure</strong>, <strong>GCP</strong>, DevSecOps, Kubernetes, security, compliance, platform engineering, observability, automation, and cloud modernization. We help organizations design, build, and optimize scalable platforms for regulated, enterprise, and high-growth environments.
+          </p>
+          <div class="heroActions">
+            <a class="btn primary" href="https://calendly.com/oleg-levenkov" target="_blank" rel="noreferrer">Book via Calendly</a>
+            <a class="btn" href="#services">Explore services</a>
+            <a class="btn" href="#contact">Send a message</a>
+          </div>
+          <div class="mini">
+            Typical engagements: Cloud foundations • Platform build-out • Security & compliance readiness • Delivery acceleration
+          </div>
+        </div>
+
+        <aside class="heroCard" aria-label="Value highlights">
+          <h3>What you can expect</h3>
+          <div class="metric">
+            <div class="pill"><b>20+ years</b><span>Technology consulting & delivery experience</span></div>
+            <div class="pill"><b>Multi-specialist team</b><span>Cloud, DevSecOps, security, data & platform engineering</span></div>
+            <div class="pill"><b>Audit-ready</b><span>SOC 2 • PCI • HIPAA • ISO • OCC</span></div>
+            <div class="pill"><b>End-to-end delivery</b><span>Architecture, engineering, operations & optimization</span></div>
+          </div>
+          <div class="mini" style="margin-top:12px;">
+            Start with a <strong>Cloud & Security Readiness Review</strong> or a <strong>Platform MVP Plan</strong>.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <div class="trust">
+    <div class="container">
+      <div class="trustRow">
+        <div class="left">Built for regulated and high-availability systems</div>
+        <div class="badges" aria-label="Capabilities badges">
+          <span class="badge">Terraform IaC</span>
+          <span class="badge">Kubernetes (EKS/AKS/GKE)</span>
+          <span class="badge">CI/CD & GitOps</span>
+          <span class="badge">Zero Trust</span>
+          <span class="badge">SOC 2 • PCI • HIPAA • ISO • OCC</span>
+          <span class="badge">SRE & Observability</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>Services</h2>
+          <p>Outcome-focused consulting that scales from initial foundations to mature platforms and operating models.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Cloud Foundations & Landing Zones</h3>
+          <p>Secure, scalable baselines with policy guardrails and sane defaults across environments.</p>
+          <ul>
+            <li>Org/account/subscription structure, network design, identity</li>
+            <li>Policy-as-code, logging & encryption standards</li>
+            <li>Environment strategy and change controls</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Platform Engineering</h3>
+          <p>Internal platforms that enable teams to ship faster—without sacrificing safety.</p>
+          <ul>
+            <li>Golden paths, templates, developer enablement</li>
+            <li>Secure self-service provisioning (Terraform modules, pipelines)</li>
+            <li>Standardized runtime and release workflows</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>DevSecOps & Compliance Automation</h3>
+          <p>Shift-left security with automated evidence, controls mapping, and guardrails.</p>
+          <ul>
+            <li>SAST/DAST, secrets scanning, SBOM, IaC policy checks</li>
+            <li>Control mapping for SOC 2 / HIPAA / ISO 27001</li>
+            <li>Audit evidence automation and documentation kits</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Kubernetes & Runtime Modernization</h3>
+          <p>Reliable clusters and patterns for modern services, data, and ML workloads.</p>
+          <ul>
+            <li>EKS/AKS/GKE architecture, security, and operations</li>
+            <li>Ingress, workload identity, secrets, safe rollout patterns</li>
+            <li>Progressive delivery & GitOps-ready workflows</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>SRE, Observability & Reliability</h3>
+          <p>Make uptime measurable and operations predictable with the right signals.</p>
+          <ul>
+            <li>SLIs/SLOs, incident response, runbooks</li>
+            <li>Logging/metrics/tracing strategy, dashboards, alert hygiene</li>
+            <li>Performance, resiliency, DR design</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Cost Optimization & Cloud FinOps</h3>
+          <p>Lower spend while improving performance using practical governance and tuning.</p>
+          <ul>
+            <li>Rightsizing, autoscaling, storage tiering, reserved capacity</li>
+            <li>Budgets, tagging strategy, showback/chargeback</li>
+            <li>Cost guardrails in CI/CD and provisioning workflows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="industries">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>Industries we serve</h2>
+          <p>We support clients across financial services, healthcare, life sciences, legal, SaaS, publishing, and other regulated enterprise environments with specialists in cloud, infrastructure, automation, security, compliance, and platform modernization.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card"><h3>FinTech & Financial Services</h3><p>Security-first architectures, audit trails, and reliability for critical systems.</p></div>
+        <div class="card"><h3>Healthcare & Life Sciences</h3><p>HIPAA-aligned controls, PHI/PII protection, and compliant data platforms.</p></div>
+        <div class="card"><h3>Legal & Professional Services</h3><p>Secure collaboration, governance, and risk-managed delivery pipelines.</p></div>
+        <div class="card"><h3>SaaS & High-Growth Startups</h3><p>Platform maturity from MVP to enterprise scale, with strong guardrails.</p></div>
+        <div class="card"><h3>Data & AI/ML Platforms</h3><p>Foundations for data warehouses, model pipelines, and secure experimentation.</p></div>
+        <div class="card"><h3>Public Sector & Regulated</h3><p>Compliance-forward governance and defensible security documentation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>Our approach</h2>
+          <p>A practical delivery model refined over more than 20 years of consulting, architecture, engineering, operations, migrations, and compliance-focused delivery.</p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><h4>Assess & align</h4><p>Architecture review, risk analysis, and a prioritized roadmap aligned to business goals.</p></div></div>
+        <div class="step"><div class="num">2</div><div><h4>Design with guardrails</h4><p>Reference architecture + standards: identity, network, encryption, logging, and policy.</p></div></div>
+        <div class="step"><div class="num">3</div><div><h4>Build the platform</h4><p>Landing zone, pipelines, IaC modules, templates, and secure self-service patterns.</p></div></div>
+        <div class="step"><div class="num">4</div><div><h4>Operationalize</h4><p>Runbooks, SLOs, dashboards, incident response, and a clean handoff to your team.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="case-studies">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>Our areas of expertise</h2>
+          <p>Our team brings deep hands-on experience across the following technologies and delivery areas.</p>
+        </div>
+      </div>
+
+      <div class="cases">
+        <div class="card">
+          <h3>Cloud Architecture, Landing Zones & Secure CI/CD</h3>
+          <p>Designed secure landing zones and policy-enforced cloud foundations using Terraform, Vault, AWS SCPs, IAM, KMS, and GitOps-based delivery workflows across AWS and Azure environments.</p>
+          <div class="tagRow"><span class="tag">Terraform</span><span class="tag">Vault</span><span class="tag">AWS/Azure</span><span class="tag">GitOps</span></div>
+          <div class="result"><strong>Specialists:</strong> AWS, Azure, GCP, Terraform, IAM, Vault, GitOps, CI/CD, cloud governance, and secure delivery pipelines.</div>
+        </div>
+
+        <div class="card">
+          <h3>Kubernetes, Observability & Site Reliability Engineering</h3>
+          <p>Implemented EKS, AKS, and GKE platform patterns with Prometheus, Grafana, Datadog, Azure Monitor, and SRE practices focused on uptime, incident reduction, and operational visibility.</p>
+          <div class="tagRow"><span class="tag">EKS/AKS/GKE</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">SRE</span></div>
+          <div class="result"><strong>Specialists:</strong> EKS, AKS, GKE, Prometheus, Grafana, Datadog, logging, monitoring, incident response, and reliability engineering.</div>
+        </div>
+
+        <div class="card">
+          <h3>DevSecOps, Compliance & Audit Readiness</h3>
+          <p>Integrated security and compliance controls directly into delivery pipelines using tools such as SonarQube, OWASP ZAP, Snyk, Checkov, Prisma Cloud, and Aqua Security, while guiding teams on SOC 2, PCI, HIPAA, and OCC-aligned practices.</p>
+          <div class="tagRow"><span class="tag">DevSecOps</span><span class="tag">SOC 2</span><span class="tag">PCI</span><span class="tag">HIPAA</span></div>
+          <div class="result"><strong>Specialists:</strong> DevSecOps, application security, vulnerability scanning, policy enforcement, evidence automation, SOC 2, PCI, HIPAA, ISO, and enterprise controls.</div>
+        </div>
+
+        <div class="card">
+          <h3>Cloud Migration, Platform Modernization, Data & FinOps</h3>
+          <p>Led and supported cloud migrations, infrastructure modernization, reusable IaC adoption, and cost optimization initiatives across enterprise environments including publishing, SaaS, finance, and healthcare-related workloads.</p>
+          <div class="tagRow"><span class="tag">Migration</span><span class="tag">FinOps</span><span class="tag">Cloud Architecture</span><span class="tag">Automation</span></div>
+          <div class="result"><strong>Specialists:</strong> cloud migration, modernization, cost optimization, data platform enablement, automation, operating model design, and continuous improvement.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>Why clients choose NYCConsult</h2>
+          <p>Clients choose us for deep technical expertise, long-term delivery experience, and access to specialists across multiple technologies and disciplines.</p>
+        </div>
+      </div>
+
+      <div class="quotes">
+        <div class="card quote">
+          <div class="stars">★★★★★</div>
+          <p>Over 20 years in business delivering cloud, infrastructure, security, and platform solutions for enterprise and regulated environments.</p>
+          <div class="who">Company Experience<span>20+ years in business</span></div>
+        </div>
+        <div class="card quote">
+          <div class="stars">★★★★★</div>
+          <p>A multi-specialist team covering cloud engineering, Kubernetes, observability, DevSecOps, compliance, automation, and modernization initiatives.</p>
+          <div class="who">Specialist Coverage<span>Cloud • Security • Platform • Data</span></div>
+        </div>
+        <div class="card quote">
+          <div class="stars">★★★★★</div>
+          <p>Flexible delivery support ranging from architecture strategy and implementation to optimization, audit readiness, migration, and operational improvement.</p>
+          <div class="who">Delivery Model<span>Advisory • Engineering • Optimization</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>FAQ</h2>
+          <p>Answers to the questions we hear most often from engineering and security leaders.</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>What kind of company is NYCConsult?</summary>
+        <p>NYCConsult is a technology consulting company with more than 20 years in business. We work through a team of specialists across cloud architecture, platform engineering, DevSecOps, Kubernetes, security, compliance, observability, automation, data, and cloud optimization. Engagements are staffed based on the scope, timeline, and technologies involved.</p>
+      </details>
+      <details>
+        <summary>Can you help with compliance documentation (SOC 2, HIPAA, ISO 27001)?</summary>
+        <p>Yes. We provide readiness assessments, control mappings, templates, evidence workflows, and implementation guidance to make compliance repeatable and less disruptive.</p>
+      </details>
+      <details>
+        <summary>How do you handle security in CI/CD?</summary>
+        <p>We implement a practical shift-left model: secrets scanning, SAST/DAST, SBOM, IaC policy checks, and secure approvals—balanced to keep delivery velocity high.</p>
+      </details>
+      <details>
+        <summary>Do you offer fixed-scope engagements?</summary>
+        <p>Yes. We can structure work as fixed-scope milestones (e.g., landing zone build, platform MVP) or as a retainer for ongoing platform and security improvements.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="sectionHead">
+        <div>
+          <h2>Contact</h2>
+          <p>We respond within 1 business day. For urgent issues, include <strong>“URGENT”</strong> in your message and provide a callback number.</p>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="card">
+          <h3>Book a strategy call</h3>
+          <p style="color:var(--muted); margin-top:8px;">
+            Ideal if you need: an experienced consulting partner to assess your environment, provide specialists in key technologies, define a cloud and security roadmap, modernize delivery pipelines, improve reliability, or execute a platform transformation.
+          </p>
+          <div class="tagRow" aria-label="Quick options">
+            <span class="tag">Landing Zone Review</span>
+            <span class="tag">Platform MVP Plan</span>
+            <span class="tag">Compliance Readiness</span>
+            <span class="tag">FinOps & Cost Review</span>
+          </div>
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="https://calendly.com/oleg-levenkov" target="_blank" rel="noreferrer">Book via Calendly</a>
+            <a class="btn" href="mailto:info@nycconsult.com">Email us</a>
+          </div>
+          <div class="fineprint">Form submissions go to your email via API Gateway + Lambda + SES.</div>
+        </div>
+
+        <div class="card">
+          <h3>Send a message</h3>
+          <form id="contactForm" class="form">
+            <input name="name" type="text" placeholder="Your name" required>
+            <input name="email" type="email" placeholder="Work email" required>
+            <input name="company" type="text" placeholder="Company (optional)">
+            <textarea name="message" placeholder="What are you trying to build or fix? Timeline, cloud, constraints, compliance needs…" required></textarea>
+            <button class="btn primary" type="submit">Send message</button>
+          </form>
+          <div id="contactOk" class="notice ok">✅ Thanks — we’ll respond within 1 business day.</div>
+          <div id="contactErr" class="notice err">❌ Something went wrong. Please email <a href="mailto:info@nycconsult.com" style="text-decoration:underline;">info@nycconsult.com</a>.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footerRow">
+        <div>
+          <strong style="color:var(--text);">NYCConsult</strong><br/>
+          <span>Cloud • Platform Engineering • DevSecOps • Compliance</span>
+        </div>
+        <div>
+          <a href="https://www.linkedin.com/company/2863925/" target="_blank" rel="noreferrer">Company LinkedIn</a>
+          &nbsp;•&nbsp;
+          <a href="mailto:info@nycconsult.com">info@nycconsult.com</a>
+        </div>
+      </div>
+      <div class="fineprint" style="margin-top:14px;">
+        © <span id="year"></span> NYCConsult. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    const CONTACT_API = "https://o1i32zh7g5.execute-api.us-east-1.amazonaws.com/prod/contact";
+    const form = document.getElementById("contactForm");
+    const okMsg = document.getElementById("contactOk");
+    const errMsg = document.getElementById("contactErr");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      okMsg.style.display = "none";
+      errMsg.style.display = "none";
+
+      const payload = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        company: form.company.value.trim(),
+        message: form.message.value.trim()
+      };
+
+      try {
+        const res = await fetch(CONTACT_API, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) throw new Error("API error");
+
+        form.reset();
+        okMsg.style.display = "block";
+      } catch (err) {
+        console.error(err);
+        errMsg.style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
