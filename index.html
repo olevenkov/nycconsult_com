@@ -190,15 +190,16 @@
 
   <style>
     :root{
-      --bg: #0b1220;
-      --card:#0f1a33;
-      --text:#eaf0ff;
-      --muted:#b9c6e8;
-      --brand:#3b82f6;
-      --brand2:#8b5cf6;
-      --good:#22c55e;
-      --border: rgba(255,255,255,0.10);
-      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      color-scheme: light;
+      --bg: #f5f8fc;
+      --card:#ffffff;
+      --text:#11233d;
+      --muted:#52647c;
+      --brand:#1769d2;
+      --brand2:#1687d9;
+      --good:#14865d;
+      --border: rgba(19,45,77,0.14);
+      --shadow: 0 18px 48px rgba(19,45,77,0.09);
       --radius: 18px;
       --max: 1120px;
     }
@@ -209,9 +210,9 @@
       margin:0;
       font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--text);
-      background: radial-gradient(1200px 600px at 70% -10%, rgba(139,92,246,0.35), transparent 60%),
-                  radial-gradient(1000px 600px at 10% 0%, rgba(59,130,246,0.35), transparent 55%),
-                  linear-gradient(180deg, var(--bg) 0%, #070b14 100%);
+      background: radial-gradient(1200px 600px at 70% -10%, rgba(22,135,217,0.12), transparent 60%),
+                  radial-gradient(1000px 600px at 10% 0%, rgba(59,130,246,0.09), transparent 55%),
+                  linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
       line-height: 1.55;
     }
     a{ color: inherit; text-decoration: none; }
@@ -221,7 +222,7 @@
     .topbar{
       position: sticky; top: 0; z-index: 50;
       backdrop-filter: blur(10px);
-      background: rgba(7,11,20,0.65);
+      background: rgba(255,255,255,0.88);
       border-bottom: 1px solid var(--border);
     }
     .nav{
@@ -234,6 +235,7 @@
       font-weight: 800;
       letter-spacing: .2px;
     }
+    .brand > span:last-child{ font-family:Georgia, "Times New Roman", serif; font-size:19px; }
     .logo{
       width: 38px; height: 38px; border-radius: 12px;
       background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
@@ -252,7 +254,7 @@
       border-radius: 10px;
       transition: .15s ease;
     }
-    .navlinks a:hover{ color: var(--text); background: rgba(255,255,255,0.06); }
+    .navlinks a:hover{ color: var(--text); background: rgba(19,45,77,0.055); }
     .cta{ display:flex; gap:10px; align-items:center; }
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -260,14 +262,15 @@
       border-radius: 12px;
       font-weight: 700;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.06);
+      background: #fff;
       transition: .15s ease;
       white-space: nowrap;
       cursor: pointer;
     }
-    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.10); }
+    .btn:hover{ transform: translateY(-1px); background: rgba(19,45,77,0.05); }
     .btn.primary{
       border: none;
+      color:#fff;
       background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
       box-shadow: 0 14px 45px rgba(59,130,246,0.22);
     }
@@ -280,11 +283,11 @@
       inset:0;
       z-index:-1;
       pointer-events:none;
-      opacity:.58;
+      opacity:.46;
       background-image:
-        radial-gradient(600px 360px at 85% 30%, rgba(59,130,246,.22), transparent 70%),
-        linear-gradient(rgba(147,197,253,.075) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(147,197,253,.075) 1px, transparent 1px);
+        radial-gradient(600px 360px at 85% 30%, rgba(59,130,246,.14), transparent 70%),
+        linear-gradient(rgba(37,99,235,.065) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37,99,235,.065) 1px, transparent 1px);
       background-size:auto, 48px 48px, 48px 48px;
       mask-image:linear-gradient(to bottom, #000 0%, transparent 92%);
     }
@@ -299,13 +302,14 @@
       padding: 8px 12px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.9);
       color: var(--muted);
       font-weight: 700;
       width: fit-content;
     }
     .dot{ width: 8px; height: 8px; border-radius: 999px; background: var(--good); }
     h1{
+      font-family:Georgia, "Times New Roman", serif;
       margin: 16px 0 12px;
       font-size: 44px;
       line-height: 1.07;
@@ -315,7 +319,7 @@
     .heroActions{ display:flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 10px; }
     .mini{ color: var(--muted); font-size: 13px; margin-top: 8px; }
     .heroCard{
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.9));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 18px;
@@ -329,7 +333,7 @@
       padding: 12px;
       border-radius: 14px;
       border: 1px solid var(--border);
-      background: rgba(7,11,20,0.35);
+      background: #f4f8fc;
     }
     .pill b{ display:block; font-size: 18px; margin-bottom: 2px; }
     .pill span{ color: var(--muted); font-size: 13px; }
@@ -339,7 +343,7 @@
       display:flex; flex-wrap: wrap; gap: 10px;
       align-items:center; justify-content: space-between;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.86);
       border-radius: var(--radius);
       padding: 14px 16px;
     }
@@ -347,7 +351,7 @@
     .badges{ display:flex; flex-wrap:wrap; gap: 8px; justify-content:flex-end; }
     .badge{
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.05);
+      background: #f8fbff;
       padding: 7px 10px;
       border-radius: 999px;
       font-weight: 700;
@@ -357,22 +361,23 @@
 
     section{ padding: 54px 0; }
     .sectionHead{ display:flex; align-items:flex-end; justify-content:space-between; gap: 18px; margin-bottom: 18px; }
-    .sectionHead h2{ margin: 0; font-size: 28px; letter-spacing: -0.3px; }
+    .sectionHead h2{ margin: 0; font-family:Georgia, "Times New Roman", serif; font-size: 30px; letter-spacing: -0.3px; }
     .sectionHead p{ margin: 0; color: var(--muted); max-width: 66ch; }
+    .sectionEyebrow{ margin:0 0 5px !important; color:var(--brand) !important; font-size:11px !important; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
 
     .grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .card{
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.05);
+      background: #fff;
       border-radius: var(--radius);
       padding: 18px;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+      box-shadow: 0 14px 36px rgba(19,45,77,0.07);
       transition: transform .15s ease, border-color .15s ease, background .15s ease;
     }
-    .card:hover{ transform: translateY(-2px); border-color: rgba(147,197,253,0.32); background: rgba(255,255,255,0.07); }
+    .card:hover{ transform: translateY(-2px); border-color: rgba(37,99,235,0.28); background: #fff; }
     .card h3, .card h4{ margin: 0 0 8px; font-size: 16px; }
-    .card h3 a, .card h4 a{ text-decoration: underline; text-decoration-color: rgba(185,198,232,0.32); text-underline-offset: 3px; }
-    .card h3 a:hover, .card h4 a:hover{ color: #b9d1ff; text-decoration-color: currentColor; }
+    .card h3 a, .card h4 a{ text-decoration: underline; text-decoration-color: rgba(19,45,77,0.25); text-underline-offset: 3px; }
+    .card h3 a:hover, .card h4 a:hover{ color: #1456a8; text-decoration-color: currentColor; }
     .card p{ margin: 0; color: var(--muted); font-size: 14px; }
     .card ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
     .card li{ margin: 6px 0; }
@@ -394,12 +399,15 @@
       border:1px solid rgba(147,197,253,.22);
       border-radius:14px;
       background:linear-gradient(145deg, rgba(59,130,246,.17), rgba(139,92,246,.12));
-      color:#bfdbfe;
+      color:#1d5eaa;
     }
     .service-group-icon svg{ width:22px; height:22px; stroke:currentColor; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
     .service-group-heading h3{ margin: 0 0 4px; font-size: 19px; letter-spacing: -.2px; }
     .service-group-heading p{ margin: 0; color: var(--muted); font-size: 14px; }
-    .service-card h4{ font-size: 16px; }
+    .service-card h4{ display:flex; align-items:flex-start; gap:10px; font-size: 16px; }
+    .service-card h4 a{ flex:1; }
+    .service-icon{ width:28px; height:28px; flex:0 0 28px; display:grid; place-items:center; border-radius:9px; color:#1769d2; background:#eff6ff; border:1px solid rgba(37,99,235,.16); }
+    .service-icon svg{ width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
     .service-feature{ grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; align-items: start; }
     .service-feature h4{ grid-column: 1 / -1; }
     .service-feature p{ align-self: center; }
@@ -410,7 +418,7 @@
       display:flex; gap: 12px;
       align-items:flex-start;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.05);
+      background: #fff;
       border-radius: var(--radius);
       padding: 16px;
     }
@@ -433,7 +441,7 @@
       border-radius: 999px;
       border: 1px solid var(--border);
       color: var(--muted);
-      background: rgba(7,11,20,0.25);
+      background: #f3f7fc;
     }
     .result{
       margin-top: 12px;
@@ -453,7 +461,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 14px 16px;
-      background: rgba(255,255,255,0.05);
+      background: #fff;
     }
     details + details{ margin-top: 10px; }
     summary{ cursor: pointer; font-weight: 800; list-style: none; }
@@ -467,12 +475,12 @@
       padding: 12px 12px;
       border-radius: 14px;
       border: 1px solid var(--border);
-      background: rgba(7,11,20,0.35);
+      background: #fff;
       color: var(--text);
       outline: none;
     }
     textarea{ min-height: 130px; resize: vertical; }
-    input::placeholder, textarea::placeholder{ color: rgba(185,198,232,0.7); }
+    input::placeholder, textarea::placeholder{ color: #64748b; }
     .fineprint{ color: var(--muted); font-size: 12px; margin-top: 8px; }
 
     .notice{
@@ -481,7 +489,7 @@
       padding: 12px;
       border-radius: 14px;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
+      background: #fff;
       color: var(--muted);
       font-size: 14px;
     }
@@ -490,7 +498,7 @@
 
     footer{ padding: 28px 0 44px; border-top: 1px solid var(--border); color: var(--muted); }
     .footerRow{ display:flex; flex-wrap:wrap; gap: 12px; align-items:center; justify-content:space-between; }
-    .footerRow a{ text-decoration: underline; text-decoration-color: rgba(185,198,232,0.35); }
+    .footerRow a{ text-decoration: underline; text-decoration-color: rgba(19,45,77,0.25); }
 
     @media (max-width: 980px){
       .heroGrid{ grid-template-columns: 1fr; }
@@ -506,7 +514,7 @@
       width:44px; height:44px;
       border-radius:12px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,0.06);
+      background: #fff;
       color: var(--text);
       font-size:20px;
       align-items:center; justify-content:center;
@@ -519,7 +527,7 @@
       padding:12px 14px;
       border-radius:12px;
       border:1px solid var(--border);
-      background: rgba(255,255,255,0.05);
+      background: #fff;
       color: var(--muted);
       font-weight:700;
     }
@@ -610,7 +618,7 @@
     <div class="container">
       <div class="heroGrid">
         <div>
-          <div class="kicker"><span class="dot"></span> Cloud, cybersecurity & platform consulting</div>
+          <div class="kicker"><span class="dot"></span> Enterprise technology consulting</div>
           <h1>Build, secure, and operate cloud platforms with confidence.</h1>
           <p class="lead">
             With <strong>20+ years in business</strong>, NYCConsult helps organizations modernize cloud infrastructure, strengthen security, and improve reliability. Our specialist teams support AWS, Azure, Google Cloud, platform engineering, cloud FinOps, and small-business digital commerce.
@@ -628,7 +636,7 @@
         <aside class="heroCard" aria-label="Value highlights">
           <h3>How we can help</h3>
           <figure class="heroArtwork">
-            <img src="/assets/cloud-foundation.svg" alt="Diagram of a cloud foundation connecting identity, network, security guardrails, workloads, and operations">
+            <img src="/assets/nyc-skyline.svg" alt="Illustration of the New York City skyline above the Hudson River">
           </figure>
           <div class="metric">
             <div class="pill"><b>Cloud foundations</b><span>Architecture, landing zones & migration</span></div>
@@ -647,8 +655,11 @@
   <div class="trust">
     <div class="container">
       <div class="trustRow">
-        <div class="left">Specialist coverage across</div>
+        <div class="left">Cloud platform expertise</div>
         <div class="badges" aria-label="Capabilities badges">
+          <span class="badge provider">AWS</span>
+          <span class="badge provider">Microsoft Azure</span>
+          <span class="badge provider">Google Cloud</span>
           <span class="badge">Terraform IaC</span>
           <span class="badge">Kubernetes (EKS/AKS/GKE)</span>
           <span class="badge">CI/CD & GitOps</span>
@@ -665,7 +676,8 @@
     <div class="container">
       <div class="sectionHead">
         <div>
-          <h2>Services</h2>
+          <p class="sectionEyebrow">Our services</p>
+          <h2>Comprehensive cloud consulting for what's next.</h2>
           <p>Practical cloud, cybersecurity, resilience, and digital commerce services shaped around your environment and business needs.</p>
         </div>
       </div>
@@ -679,22 +691,22 @@
           <p>Build a secure foundation, modernize workloads, and make delivery repeatable.</p></div>
         </div>
         <div class="card service-card">
-          <h4><a href="/services/cloud-consulting.html">Cloud Foundations & Landing Zones</a></h4>
+          <h4><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.5 18.5h9a4 4 0 0 0 .4-8A5.5 5.5 0 0 0 6.2 9a4.8 4.8 0 0 0 1.3 9.5Z"/><path d="M12 12v6m-2.5-2.5L12 18l2.5-2.5"/></svg></span><a href="/services/cloud-consulting.html">Cloud Foundations & Landing Zones</a></h4>
           <p>Plan secure, scalable baselines across AWS, Azure, and Google Cloud.</p>
           <ul><li>Account, network, and identity design</li><li>Policy, logging, and infrastructure-as-code guardrails</li></ul>
         </div>
         <div class="card service-card">
-          <h4><a href="/services/cloud-migration.html">Cloud Migration & Modernization</a></h4>
+          <h4><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.5 18.5h9a4 4 0 0 0 .4-8A5.5 5.5 0 0 0 6.2 9a4.8 4.8 0 0 0 1.3 9.5Z"/><path d="M8 13h8m-3-3 3 3-3 3"/></svg></span><a href="/services/cloud-migration.html">Cloud Migration & Modernization</a></h4>
           <p>Move or modernize workloads with a clear plan and controlled cutovers.</p>
           <ul><li>Workload and dependency discovery</li><li>Migration waves, validation, rollback, and handoff</li></ul>
         </div>
         <div class="card service-card">
-          <h4><a href="/services/platform-engineering.html">Platform Engineering</a></h4>
+          <h4><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5-8 4.5-8-4.5L12 3Z"/><path d="m4 12 8 4.5 8-4.5M4 16.5l8 4.5 8-4.5"/></svg></span><a href="/services/platform-engineering.html">Platform Engineering</a></h4>
           <p>Help teams ship through supported, secure, self-service workflows.</p>
           <ul><li>Golden paths and reusable service templates</li><li>Secure provisioning and delivery pipelines</li></ul>
         </div>
         <div class="card service-card">
-          <h4><a href="/services/kubernetes-consulting.html">Kubernetes & Runtime Modernization</a></h4>
+          <h4><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v4m0 10v4M3 12h4m10 0h4M5.6 5.6l2.8 2.8m7.2 7.2 2.8 2.8m0-12.8-2.8 2.8m-7.2 7.2-2.8 2.8"/><circle cx="12" cy="12" r="4"/></svg></span><a href="/services/kubernetes-consulting.html">Kubernetes & Runtime Modernization</a></h4>
           <p>Improve the security and operation of EKS, AKS, and GKE platforms.</p>
           <ul><li>Cluster architecture and workload security</li><li>Deployment, observability, and reliability patterns</li></ul>
         </div>
@@ -707,22 +719,22 @@
           <p>Reduce technical risk, plan for disruption, and make cloud spend actionable.</p></div>
         </div>
         <div class="card service-card">
-          <h4><a href="/services/devsecops-compliance.html">DevSecOps & Compliance Readiness</a></h4>
+          <h4><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 4.8-2.8 8-7 10-4.2-2-7-5.2-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><a href="/services/devsecops-compliance.html">DevSecOps & Compliance Readiness</a></h4>
           <p>Integrate practical security checks and evidence into delivery workflows.</p>
           <ul><li>Code, dependency, secrets, and infrastructure checks</li><li>Control mapping and evidence workflow guidance</li></ul>
         </div>
         <div class="card service-card">
-          <h4><a href="/services/cybersecurity-assessment.html">Cybersecurity Assessment & Penetration Testing</a></h4>
+          <h4><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 4.8-2.8 8-7 10-4.2-2-7-5.2-7-10V6l7-3Z"/><circle cx="11" cy="11" r="2.5"/><path d="m13 13 2.5 2.5"/></svg></span><a href="/services/cybersecurity-assessment.html">Cybersecurity Assessment & Penetration Testing</a></h4>
           <p>Understand agreed security risks and prioritize remediation.</p>
           <ul><li>Written authorization and scope for penetration tests</li><li>Risk-ranked findings and practical recommendations</li></ul>
         </div>
         <div class="card service-card">
-          <h4><a href="/services/high-availability-disaster-recovery.html">High Availability & Disaster Recovery</a></h4>
+          <h4><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5m-16 7v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg></span><a href="/services/high-availability-disaster-recovery.html">High Availability & Disaster Recovery</a></h4>
           <p>Design recovery plans around business priorities and service needs.</p>
           <ul><li>Recovery time and recovery point objectives</li><li>Backup, restore, failover, and recovery exercises</li></ul>
         </div>
         <div class="card service-card">
-          <h4><a href="/services/cloud-finops.html">Cloud FinOps & Cost Optimization</a></h4>
+          <h4><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h17"/><path d="m7 15 4-4 3 2 5-6"/><path d="M16 7h3v3"/></svg></span><a href="/services/cloud-finops.html">Cloud FinOps & Cost Optimization</a></h4>
           <p>Make cloud costs visible, explainable, and actionable.</p>
           <ul><li>Allocation, budgets, and usage trends</li><li>Prioritized optimization with trade-offs and owners</li></ul>
         </div>
@@ -735,7 +747,7 @@
           <p>Launch a customer-friendly website or store, connect inventory, and protect advertising accounts.</p></div>
         </div>
         <div class="card service-card service-feature">
-          <h4><a href="/services/small-business-digital-commerce.html">Websites, Online Stores & Ad Account Security</a></h4>
+          <h4><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 1.9-1.4L22 8H6"/><circle cx="10" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/></svg></span><a href="/services/small-business-digital-commerce.html">Websites, Online Stores & Ad Account Security</a></h4>
           <p>Connect your customer experience, store operations, and digital-ad account security within a clearly agreed scope.</p>
           <ul><li>Website and online-store design and build</li><li>Inventory integration and Google Ads / Meta Ads security reviews</li></ul>
         </div>
