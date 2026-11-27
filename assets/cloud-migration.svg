@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" fill="none">
+  <defs>
+    <linearGradient id="panel" x1="30" y1="20" x2="690" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14233d"/>
+      <stop offset="1" stop-color="#0b1324"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="718" height="478" rx="28" fill="url(#panel)" stroke="#334155"/>
+  <text x="34" y="48" fill="#eaf0ff" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="800" letter-spacing="1.4">CLOUD MIGRATION PATH</text>
+  <text x="686" y="48" fill="#9fb4d5" font-family="Inter,Arial,sans-serif" font-size="12" text-anchor="end">DISCOVER → PLAN → MOVE</text>
+  <path d="M34 68H686" stroke="#334155"/>
+  <rect x="38" y="122" width="128" height="156" rx="16" fill="#111d31" stroke="#334155"/>
+  <rect x="201" y="122" width="128" height="156" rx="16" fill="#111d31" stroke="#3b82f6" stroke-opacity=".5"/>
+  <rect x="364" y="122" width="128" height="156" rx="16" fill="#111d31" stroke="#8b5cf6" stroke-opacity=".55"/>
+  <rect x="527" y="122" width="155" height="156" rx="16" fill="#111d31" stroke="#22c55e" stroke-opacity=".5"/>
+  <g font-family="Inter,Arial,sans-serif" text-anchor="middle">
+    <circle cx="102" cy="169" r="23" fill="#64748b" fill-opacity=".16"/>
+    <path d="M91 166h22m-18-7h14m-12 14h10" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+    <text x="102" y="217" fill="#eaf0ff" font-size="13" font-weight="700">Current state</text>
+    <text x="102" y="240" fill="#9fb4d5" font-size="10">Apps · data · dependencies</text>
+    <circle cx="265" cy="169" r="23" fill="#3b82f6" fill-opacity=".17"/>
+    <path d="M257 169h16m-8-8v16m-7-13 7-7 7 7" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="265" y="217" fill="#eaf0ff" font-size="13" font-weight="700">Assess &amp; plan</text>
+    <text x="265" y="240" fill="#9fb4d5" font-size="10">Readiness · target · sequence</text>
+    <circle cx="428" cy="169" r="23" fill="#8b5cf6" fill-opacity=".17"/>
+    <path d="M417 169h22m-6-6 6 6-6 6m-10 5 5-5" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="428" y="217" fill="#eaf0ff" font-size="13" font-weight="700">Move in waves</text>
+    <text x="428" y="240" fill="#9fb4d5" font-size="10">Validate · rollback · learn</text>
+    <circle cx="604" cy="169" r="23" fill="#22c55e" fill-opacity=".15"/>
+    <path d="M592 170a12 12 0 0 1 23-4m-1-7v8h-8m10 3a12 12 0 0 1-23 4m1 7v-8h8" stroke="#86efac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="604" y="217" fill="#eaf0ff" font-size="13" font-weight="700">Operate</text>
+    <text x="604" y="240" fill="#9fb4d5" font-size="10">Handoff · optimize · support</text>
+  </g>
+  <path d="M166 199h35m128 0h35m128 0h35" stroke="url(#flow)" stroke-width="2.5" stroke-dasharray="5 5"/>
+  <path d="m193 192 9 7-9 7m154-14 9 7-9 7m154-14 9 7-9 7" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="38" y="324" width="644" height="88" rx="16" fill="#101a2b" stroke="#334155"/>
+  <text x="62" y="355" fill="#eaf0ff" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">Guardrails throughout the move</text>
+  <g font-family="Inter,Arial,sans-serif" font-size="11" fill="#bfdbfe">
+    <rect x="62" y="372" width="142" height="24" rx="12" fill="#3b82f6" fill-opacity=".12" stroke="#3b82f6" stroke-opacity=".35"/>
+    <text x="133" y="388" text-anchor="middle">Security &amp; identity</text>
+    <rect x="220" y="372" width="142" height="24" rx="12" fill="#8b5cf6" fill-opacity=".12" stroke="#8b5cf6" stroke-opacity=".35"/>
+    <text x="291" y="388" text-anchor="middle">Testing &amp; cutover</text>
+    <rect x="378" y="372" width="142" height="24" rx="12" fill="#22c55e" fill-opacity=".1" stroke="#22c55e" stroke-opacity=".35"/>
+    <text x="449" y="388" text-anchor="middle">Recovery &amp; rollback</text>
+    <rect x="536" y="372" width="122" height="24" rx="12" fill="#64748b" fill-opacity=".15" stroke="#64748b" stroke-opacity=".4"/>
+    <text x="597" y="388" text-anchor="middle">Cost visibility</text>
+  </g>
+</svg>

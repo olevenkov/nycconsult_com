@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloud Landing Zone Planning Checklist | NYCConsult</title>
+  <meta name="description" content="A practical cloud landing zone checklist covering account structure, identity, network, security policy, logging, infrastructure as code, and operating ownership.">
+  <link rel="canonical" href="https://nycconsult.com/insights/landing-zone-checklist.html">
+  <link rel="stylesheet" href="/subpage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="/analytics-events.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cloud Landing Zone Planning Checklist",
+    "description": "A practical checklist for planning account structure, identity, networking, security policy, logging, infrastructure as code, and cloud operating ownership.",
+    "mainEntityOfPage": "https://nycconsult.com/insights/landing-zone-checklist.html",
+    "author": {"@type": "Organization", "name": "NYCConsult"},
+    "publisher": {"@id": "https://nycconsult.com/#organization"}
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header"><div class="page-container site-nav"><a class="site-brand" href="/"><span class="brand-mark" aria-hidden="true">NY</span><span>NYCConsult</span></a><nav class="site-links" aria-label="Primary navigation"><a href="/#services">Services</a><a href="/#insights">Insights</a><a href="/#faq">FAQ</a><a href="/privacy.html">Privacy</a><a class="button" href="/#contact">Contact</a></nav></div></header>
+  <main class="page-container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/#insights">Insights</a> / Landing zone checklist</nav>
+    <article>
+      <header class="article-hero">
+        <p class="eyebrow">Cloud architecture · Planning guide</p>
+        <h1>Cloud landing zone planning checklist</h1>
+        <p class="lede">A landing zone is the shared foundation for cloud workloads. Its design should make identity, connectivity, security, and operations understandable before teams depend on it.</p>
+        <figure class="article-art"><img src="/assets/cloud-foundation.svg" alt="Cloud foundation diagram connecting identity, network, security guardrails, workloads, and operations"></figure>
+      </header>
+      <section>
+        <h2>1. Define account and environment boundaries</h2>
+        <p>Decide how accounts, subscriptions, or projects will separate production, non-production, shared services, and teams. Document who can create them and how ownership changes are handled.</p>
+      </section>
+      <section>
+        <h2>2. Establish identity and access patterns</h2>
+        <ul>
+          <li>Integrate workforce identity and define role-based access.</li>
+          <li>Prefer short-lived, workload-specific credentials over shared long-lived secrets.</li>
+          <li>Document privileged access, break-glass use, and access review ownership.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>3. Design network connectivity deliberately</h2>
+        <p>Map required paths between cloud workloads, corporate networks, internet services, and other environments. Clarify DNS, ingress and egress controls, segmentation, and responsibility for network changes.</p>
+      </section>
+      <section>
+        <h2>4. Make security policy and logging repeatable</h2>
+        <ul>
+          <li>Set baseline encryption, key management, and resource policy expectations.</li>
+          <li>Centralize audit logs and security findings with clear access and retention owners.</li>
+          <li>Use policy-as-code for controls that can be tested reliably.</li>
+          <li>Define how exceptions are approved, recorded, and revisited.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>5. Provision through infrastructure as code</h2>
+        <p>Use reviewed, version-controlled templates for shared foundation components. Include testing, change approval, drift detection, and a documented path for safe updates.</p>
+      </section>
+      <section>
+        <h2>6. Assign operational ownership</h2>
+        <p>For each shared service, identify the owner, support path, monitoring, recovery expectations, and change process. A landing zone is an operating model as well as a technical architecture.</p>
+      </section>
+      <section class="content-card">
+        <h2>Before workloads onboard</h2>
+        <p>Confirm that a representative workload can be provisioned, deployed, observed, secured, and recovered using the intended patterns. Record unresolved risks and assign owners instead of treating a checklist as proof of compliance.</p>
+      </section>
+      <div class="cta-row"><a class="button" href="/services/cloud-consulting.html">Cloud architecture consulting</a><a href="/services/cloud-migration.html">Cloud migration planning</a></div>
+    </article>
+  </main>
+  <footer class="site-footer"><div class="page-container"><p>NYCConsult · <a href="/">Home</a> · <a href="mailto:info@nycconsult.com">info@nycconsult.com</a></p></div></footer>
+</body>
+</html>

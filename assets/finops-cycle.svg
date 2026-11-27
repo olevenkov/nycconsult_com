@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" fill="none">
+  <defs>
+    <linearGradient id="panel" x1="30" y1="20" x2="690" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14233d"/>
+      <stop offset="1" stop-color="#0b1324"/>
+    </linearGradient>
+    <linearGradient id="bars" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="718" height="478" rx="28" fill="url(#panel)" stroke="#334155"/>
+  <text x="34" y="48" fill="#eaf0ff" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="800" letter-spacing="1.4">CLOUD FINOPS WORKFLOW</text>
+  <text x="686" y="48" fill="#9fb4d5" font-family="Inter,Arial,sans-serif" font-size="12" text-anchor="end">VISIBILITY → ACTION</text>
+  <path d="M34 68H686" stroke="#334155"/>
+  <rect x="38" y="94" width="420" height="292" rx="16" fill="#101a2b" stroke="#334155"/>
+  <text x="62" y="126" fill="#eaf0ff" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">Usage over time</text>
+  <text x="434" y="126" fill="#9fb4d5" font-family="Inter,Arial,sans-serif" font-size="10" text-anchor="end">ILLUSTRATIVE</text>
+  <path d="M72 332H422M72 179H422M72 230H422M72 281H422" stroke="#334155" stroke-dasharray="4 6"/>
+  <path d="M72 164V332" stroke="#64748b"/>
+  <g fill="url(#bars)">
+    <rect x="96" y="251" width="24" height="81" rx="5"/>
+    <rect x="146" y="218" width="24" height="114" rx="5"/>
+    <rect x="196" y="236" width="24" height="96" rx="5"/>
+    <rect x="246" y="190" width="24" height="142" rx="5"/>
+    <rect x="296" y="207" width="24" height="125" rx="5"/>
+    <rect x="346" y="176" width="24" height="156" rx="5"/>
+  </g>
+  <path d="m96 232 50-26 50 11 50-39 50 16 50-33" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#4ade80">
+    <circle cx="96" cy="232" r="4"/><circle cx="146" cy="206" r="4"/><circle cx="196" cy="217" r="4"/>
+    <circle cx="246" cy="178" r="4"/><circle cx="296" cy="194" r="4"/><circle cx="346" cy="161" r="4"/>
+  </g>
+  <g font-family="Inter,Arial,sans-serif" font-size="10" fill="#9fb4d5" text-anchor="middle">
+    <text x="108" y="355">Wk 1</text><text x="158" y="355">Wk 2</text><text x="208" y="355">Wk 3</text>
+    <text x="258" y="355">Wk 4</text><text x="308" y="355">Wk 5</text><text x="358" y="355">Wk 6</text>
+  </g>
+  <rect x="484" y="94" width="198" height="292" rx="16" fill="#101a2b" stroke="#334155"/>
+  <text x="508" y="126" fill="#eaf0ff" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">Decision loop</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="508" y="151" width="150" height="54" rx="12" fill="#172944" stroke="#3b82f6" stroke-opacity=".55"/>
+    <circle cx="529" cy="178" r="8" fill="#3b82f6" fill-opacity=".25"/>
+    <text x="549" y="183" fill="#dbeafe" font-size="12" font-weight="700">Measure usage</text>
+    <path d="M583 205v22" stroke="#60a5fa" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="m578 221 5 7 5-7" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="508" y="229" width="150" height="54" rx="12" fill="#172944" stroke="#8b5cf6" stroke-opacity=".55"/>
+    <circle cx="529" cy="256" r="8" fill="#8b5cf6" fill-opacity=".25"/>
+    <text x="549" y="261" fill="#e9d5ff" font-size="12" font-weight="700">Assign ownership</text>
+    <path d="M583 283v22" stroke="#a78bfa" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="m578 299 5 7 5-7" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="508" y="307" width="150" height="54" rx="12" fill="#172944" stroke="#22c55e" stroke-opacity=".55"/>
+    <circle cx="529" cy="334" r="8" fill="#22c55e" fill-opacity=".2"/>
+    <text x="549" y="339" fill="#bbf7d0" font-size="12" font-weight="700">Choose action</text>
+  </g>
+  <text x="360" y="432" fill="#9fb4d5" font-family="Inter,Arial,sans-serif" font-size="11" text-anchor="middle">Illustrative pattern — not client billing or savings data</text>
+</svg>
